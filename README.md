@@ -3,8 +3,8 @@
 Organizers: 
 - Aymeric Fromherz
 - Peter Mueller
+- Bryan Parno
 - Jonathan Protzenko
-- ???
 
 See
 https://www.dagstuhl.de/en/seminars/dagstuhl-seminars/composition-of-a-proposal
