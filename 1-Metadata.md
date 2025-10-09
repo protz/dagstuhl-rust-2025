@@ -24,7 +24,7 @@ https://jonathan.protzenko.fr
 
 # Seminar title
 
-Tools for a Formal Analysis of Rust
+Tools for the Formal Analysis of Rust
 
 # Seminar type
 
@@ -48,20 +48,23 @@ rust, verification, program analysis, semantics, ownership
 
 # A short abstract
 
-With the explosion of popularity of the Rust language, a flurry of new research
-has appeared in the programming language and program semantics field. Notably,
-because the type system of Rust provides so many guarantees "for free", many
-tasks, such as program verification or program analysis, become much easier with
-the Rust programming language.
+The Rust programming language has exploded in popularity,
+due to its unique combination of strong performance, low-level flexibility,
+and high-level features and guarantees.
+This, in turn, has motivated a flurry of new research
+in the programming language and program semantics field. Notably,
+because Rust's type system provides so many guarantees "for free", many
+tasks, such as program verification or program analysis, become much easier in Rust,
+creating an exciting opportunity to push these techniques into the mainstream
+of program development.
 
-In spite of the emergence of new tools and techniques, all of these efforts
-remain independent, with little sharing of information and/or knowledge. The
-goal of this Dagstuhl Seminar is to bring together all authors, developers and
-researchers that are involved in tools for Rust program analysis, including, but
-not limited to, program verification, model checking, static analyses, and so
-on.
+While many new research tools and techniques have emerged, these efforts
+have largely proceeded independently, with knowledge exchanged primarily
+through static conference papers.
+The goal of this Dagstuhl Seminar is to bring together all authors, developers and
+researchers who are involved in tools for Rust program analysis, including, but
+not limited to, program verification, model checking, and static analyses.
 
-We expect that this seminar will allow for new collaborations, hopefully some
-factorization of common engineering tasks, and the creation of a new community
-that could capture the Rust program analysis endeavor at large, beyond simply
-verification.
+We expect that this seminar will foster new collaborations, catalyze
+collective work on common engineering tasks, and create a new community
+that captures the Rust program analysis endeavor at large.
