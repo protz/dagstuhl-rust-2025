@@ -7,10 +7,10 @@ INRIA, Paris
 aymeric.fromherz@inria.fr
 https://aymericfromherz.github.io/
  
-Peter Müller, Professor Doctor, Male
+Peter Müller, Professor, Male
 ETH Zurich
 peter.mueller@inf.ethz.ch
-https://inf.ethz.ch/people/person-detail.mueller.html
+https://www.pm.inf.ethz.ch
 
 Bryan Parno, Professor, Male
 Carnegie Mellon University, USA
@@ -24,7 +24,7 @@ https://jonathan.protzenko.fr
 
 # Seminar title
 
-Tools for a Formal Analysis of Rust
+Tools for a Formal Analysis of Rust Programs
 
 # Seminar type
 
@@ -40,7 +40,7 @@ cs.LO, cs.PL
 
 # Keywords
 
-rust, verification, program analysis, semantics, ownership
+Rust, verification, program analysis, semantics, ownership
 
 # Reference to the predecessor seminar, if applicable
 
@@ -55,7 +55,7 @@ tasks, such as program verification or program analysis, become much easier with
 the Rust programming language.
 
 In spite of the emergence of new tools and techniques, all of these efforts
-remain independent, with little sharing of information and/or knowledge. The
+remain independent, with little sharing of information or knowledge. The
 goal of this Dagstuhl Seminar is to bring together all authors, developers and
 researchers that are involved in tools for Rust program analysis, including, but
 not limited to, program verification, model checking, static analyses, and so
@@ -63,5 +63,4 @@ on.
 
 We expect that this seminar will allow for new collaborations, hopefully some
 factorization of common engineering tasks, and the creation of a new community
-that could capture the Rust program analysis endeavor at large, beyond simply
-verification.
+that could capture the Rust program analysis endeavor at large.
