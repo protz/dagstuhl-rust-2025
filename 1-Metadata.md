@@ -24,7 +24,7 @@ https://jonathan.protzenko.fr
 
 # Seminar title
 
-Tools for a Formal Analysis of Rust Programs
+Formal Analysis Tools for Rust Programs
 
 # Seminar type
 
