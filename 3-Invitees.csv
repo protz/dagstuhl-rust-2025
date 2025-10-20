@@ -1,1 +1,49 @@
 Last Name, First Name, Affiliation, Country, Email, Junior, Female, Industrial, Homepage, Topic, Round
+
+// Aeneas
+Ho, Son, Microsoft, UK
+
+// Creusot
+Jourdan, Jacques-Henri, Univerité Paris-Saclay, France
+// Xavier is not at a start-up. Not sure it makes sense to invite him
+
+// Flowistry
+Crichton, Will, Brown University, USA
+
+// Flux
+Jhala, Ranjit, UCSD, USA
+Vazou, Niki, IMDEA, Spain
+
+// Gillian-Rust
+Ayoun, Sacha-Élie, Imperial College, UK
+
+// Kani (not sure who's best to invite 
+Joshi, Rajeev, AWS, USA (co-organizer of the ETAPS Rust workshop)
+Schwartz-Narbonne, Daniel, AWS, USA
+Tautschnig, Michael, AWS, USA
+Val, Celina, AWS, Canada
+
+// Prusti
+Summers, Alexander, UBC, Canada
+//PM: I'd be happy to invite PhD students from the Prusti team if we have space
+
+// RefinedRust
+Jung, Ralf, ETH Zurich, Switzerland
+Dreyer, Derek, MPI-SWS, Germany
+Sammler, Michael, IST, Austria
+Krebbers, Robert, Radboud University Nijmegen, The Netherlands
+
+// VeriFast
+Jacobs, Bart, KU Leuven, Belgium
+
+//  Verus
+Hance, Travis, MPI-SWS, Germany
+Hawblitzel, Chris, Microsoft Research, USA
+Rapoport, Marianna, AWS, USA
+// who else?
+
+// Others
+Ryu, Sukyoung, KAIST, South Korea  // as far as I know, she is interested in building an analysis framework for Rust
+// What about people working on related ideas for other languages: Linear Dafny, OxCaml, Carbon, Swift (aside from Dafny, there is not much verification there, as far as I know)
+// What about people building the infrastructure used by some Rust verifiers, Coma, Viper, Why3
+// What about people from the Rust language/compiler team, in particular, Niko Matsakis and Felix Klock 

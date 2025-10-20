@@ -7,10 +7,10 @@ INRIA, Paris
 aymeric.fromherz@inria.fr
 https://aymericfromherz.github.io/
  
-Peter Müller, Professor Doctor, Male
+Peter Müller, Professor, Male
 ETH Zurich
 peter.mueller@inf.ethz.ch
-https://inf.ethz.ch/people/person-detail.mueller.html
+https://www.pm.inf.ethz.ch
 
 Bryan Parno, Professor, Male
 Carnegie Mellon University, USA
@@ -24,7 +24,7 @@ https://jonathan.protzenko.fr
 
 # Seminar title
 
-Tools for the Formal Analysis of Rust
+Formal Analysis Tools for Rust Programs
 
 # Seminar type
 
@@ -40,7 +40,7 @@ cs.LO, cs.PL
 
 # Keywords
 
-rust, verification, program analysis, semantics, ownership
+Rust, verification, program analysis, semantics, ownership
 
 # Reference to the predecessor seminar, if applicable
 

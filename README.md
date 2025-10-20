@@ -2,7 +2,7 @@
 
 Organizers: 
 - Aymeric Fromherz
-- Peter Mueller
+- Peter Müller
 - Bryan Parno
 - Jonathan Protzenko
 
