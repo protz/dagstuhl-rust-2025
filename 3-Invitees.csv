@@ -1,11 +1,18 @@
 Last Name, First Name, Affiliation, Country, Email, Junior, Female, Industrial, Homepage, Topic, Round
 
+// Organizers
+Fromherz, Aymeric, Inria Paris, France
+Müller, Peter, ETH Zurich, Switzerland
+Parno, Bryan, Carnegie Mellon University, USA
+Protzenko, Jonathan, Google, USA
+
 // Aeneas
-Ho, Son, Microsoft, UK
-Boisseau, Guillaume, INRIA, France
+Ho, Son, Microsoft Azure Research, UK
+Boisseau, Guillaume, Inria Paris, France
 
 // Creusot
-Jourdan, Jacques-Henri, Univerité Paris-Saclay, France
+Jourdan, Jacques-Henri, CNRS, France
+Guéneau, Armaël, Inria Saclay, France
 // Xavier is not at a start-up. Not sure it makes sense to invite him
 
 // Flowistry
@@ -18,11 +25,12 @@ Vazou, Niki, IMDEA, Spain
 // Gillian-Rust
 Ayoun, Sacha-Élie, Imperial College, UK
 
-// Kani (not sure who's best to invite 
+// Kani (not sure who's best to invite
 Joshi, Rajeev, AWS, USA (co-organizer of the ETAPS Rust workshop)
 Schwartz-Narbonne, Daniel, AWS, USA
 Tautschnig, Michael, AWS, USA
 Val, Celina, AWS, Canada
+Hassan, Zyad, AWS, USA
 
 // Prusti
 Summers, Alexander, UBC, Canada
@@ -36,6 +44,7 @@ Krebbers, Robert, Radboud University Nijmegen, The Netherlands
 
 // VeriFast
 Jacobs, Bart, KU Leuven, Belgium
+Rahimi Foroushaani, Nima, KU Leuven, Belgium
 
 //  Verus
 Hance, Travis, MPI-SWS, Germany
@@ -44,8 +53,25 @@ Rapoport, Marianna, AWS, USA
 // who else?
 // is Emina Torlak still on the project?
 
+// ESMBC-Rust
+Menezes, Rafael, University of Manchester, UK
 
-// How about other people? Rudra, 
+// Ra-Rust
+Wang, Di, Peking University, China
+
+// Rudra
+Taesoo, Kim, Georgia Tech, USA
+
+// Yuga
+Ray, Baishakhi, Columbia University, USA
+Mulhern, Anne, Red Hat, USA
+
+// Borrow-Sanitizer
+McCormack, Ian, CMU, USA // PhD student
+Aldrich, Jonathan, CMU, USA
+Sunshine, Joshua, CMU, USA
+
+// How about other static analysis people?
 
 // hax
 Franceschino, Lucas, Cryspen, France
@@ -54,13 +80,25 @@ Bhargavan, Karthikeyan, Cryspen, France
 
 // Others
 Ryu, Sukyoung, KAIST, South Korea  // as far as I know, she is interested in building an analysis framework for Rust
+Miné, Antoine, Sorbonne Université, France // recent projects on abstract interpretation for Rust
+Monniaux, David, Verimag, France // same as above, as well as static analyses for compilation
+Pasareanu, Corina, Carnegie Mellon University, USA // Automated testing of Rust libraries
+Li, Guanyuan, Huawei, Hong Kong // Pushing for Rust analysis at Huawei
+Wang, Yuting, Jiaotong University, China // recent work on formal verification for Rust
+Yuan, Shenghao, Zhejiang University, China // Trying to translate Rust to Isabelle/HOL
+Delmas, David, Airbus, France // Both are using static analysis tools (Astrée) in industrial settings
+Fontayne, Rémy, Airbus, France  // and have ongoing experiments with Rust analysis for embedded systems
+Donaldson, Alastair, Imperial College London, UK // Compiler testing for Rust
+
 // What about people working on related ideas for other languages: Linear Dafny, OxCaml, Carbon, Swift (aside from Dafny, there is not much verification there, as far as I know)
 // JP: I'm on the fence about this -- what is the reasoning for other languages being relevant for
 // Rust analysis tools? maybe inform the design of Rust...? then perhaps we could consider https://safecpp.org/draft.html
 // What about people building the infrastructure used by some Rust verifiers, Coma, Viper, Why3
 // JP: I'm sympathetic to that
-// What about people from the Rust language/compiler team, in particular, Niko Matsakis and Felix Klock 
+// What about people from the Rust language/compiler team, in particular, Niko Matsakis and Felix Klock
 // JP: yes to Niko -- not sure if Felix is interested in these academic-ish endeavors, but worth a
 // try, I'm asking around to see who else might be good candidates
 
 // Yusuke Matsushita -- he was behind the prophecy variables... and the RustHornBelt work
+
+// People from Ferrocenous?
