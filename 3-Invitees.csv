@@ -2,6 +2,7 @@ Last Name, First Name, Affiliation, Country, Email, Junior, Female, Industrial, 
 
 // Aeneas
 Ho, Son, Microsoft, UK
+Boisseau, Guillaume, INRIA, France
 
 // Creusot
 Jourdan, Jacques-Henri, Univerité Paris-Saclay, France
@@ -41,9 +42,25 @@ Hance, Travis, MPI-SWS, Germany
 Hawblitzel, Chris, Microsoft Research, USA
 Rapoport, Marianna, AWS, USA
 // who else?
+// is Emina Torlak still on the project?
+
+
+// How about other people? Rudra, 
+
+// hax
+Franceschino, Lucas, Cryspen, France
+Blaudeau, Clément, Cryspen, France
+Bhargavan, Karthikeyan, Cryspen, France
 
 // Others
 Ryu, Sukyoung, KAIST, South Korea  // as far as I know, she is interested in building an analysis framework for Rust
 // What about people working on related ideas for other languages: Linear Dafny, OxCaml, Carbon, Swift (aside from Dafny, there is not much verification there, as far as I know)
+// JP: I'm on the fence about this -- what is the reasoning for other languages being relevant for
+// Rust analysis tools? maybe inform the design of Rust...? then perhaps we could consider https://safecpp.org/draft.html
 // What about people building the infrastructure used by some Rust verifiers, Coma, Viper, Why3
+// JP: I'm sympathetic to that
 // What about people from the Rust language/compiler team, in particular, Niko Matsakis and Felix Klock 
+// JP: yes to Niko -- not sure if Felix is interested in these academic-ish endeavors, but worth a
+// try, I'm asking around to see who else might be good candidates
+
+// Yusuke Matsushita -- he was behind the prophecy variables... and the RustHornBelt work
