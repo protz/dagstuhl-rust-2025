@@ -7,13 +7,58 @@ The proposal text must be written in English and should clearly describe the fol
 
     Summary of the field(s) of research within which the topic of the proposed seminar lies
 
-Rust is important, growing interest in governments/industry.
-Many teams spread throughout the world on analysis/verification, few shared efforts, repetition of work
+Over the past decade, the Rust programming language has been gaining traction as an alternative
+to languages such as C or C++ for low-level, security-critical programming. This success especially
+stems from several key features of the language: Rust combines the low-level idioms and performance
+commonly associated to C or C++ with memory safety by construction thanks to its rich, ownership-based
+type system. Nowadays, Rust is therefore at the forefront of the Safe Coding methodology, with both
+governments and corporations advocating to a transition to Rust to guarantee the safety
+and reliability of critical software infrastructure; as an example, high-profile projects such as
+the Windows and Linux kernels are currently developing new features using Rust.
+
+Despite its promises, using Rust is however not a silver bullet. First, to ensure memory safety,
+Rust relies on runtime checks to determine whether accesses into structured memory (i.e., into arrays)
+are in bounds; if not, programs cleanly abort (panic in Rust parlance). While better than memory vulnerabilities
+in C or C++, this behavior is however limiting, necessiting programmers to establish the _panic-freedom_ of their code.
+Second, while highly effective, the Rust _borrow-checker_, in charge of ensuring that Rust code abides by the
+ownership-based discipline underlying memory safety can be too restrictive. To work around this, Rust therefore provides
+an _unsafe_ escape hatch, allowing for more complex aliasing and memory patterns, at the cost of compile-time safety
+guarantees. Last, beyond safety, Rust does not guarantee the _correctness_ of the codebases, leading to a flurry
+of potential issues.
+
+To solve these issues, the formal verification community recently started investigating the development of
+static analysis and deductive verification tools, aiming to further raise the confidence and reliability
+of newly developed, security-critical Rust code. Many teams either repurposed and extended existing, well-established
+tools for other languages (e.g., C) to target Rust, or developed new approaches specifically targeting Rust
+specificites, leveraging invariants provided by the type system to simplify analyses and verification.
+//AF: Do we need explicit citations/names here?
+
+While several of these approaches are now able to handle complex applications, e.g., cryptographic implementations,
+operating systems, security monitors, or the Rust standard library itself, the multiplicity of tools leads to
+duplicated work, both in terms of approaches and program logics being developed, but also in the engineering
+infrastructure needed to parse Rust programs and interact with existing Rust compilation toolchains (i.e., rustc)
+to extract the semantic information needed to efficiently reason about programs. To assist with the widespread transition
+to safe Rust coding, it is therefore paramount gather the Rust formal verification community in order to share ideas
+and implementation efforts, and identify impactful targets for novel analyses and verification tools.
 
     Description of the seminar topics
 
-Focus on tools, engineering, semantics underlying the soundness of the tools, as well as concrete outcomes for
-securing existing Rust code
+This seminar will focus on applications of formal verification to the Rust programming language and ecosystem.
+To do so, we will work around three main axes.
+
+1. Existing tools and ongoing developments
+Overview of existing approaches, duplication, create new connections
+Common engineering problems, interaction with Rust compiler and compiler developers
+How to leverage a rich literature on formal verification in other languages?
+
+2. Emerging targets and properties
+Survey of common vulnerabilities, identification of missing analysis and verification targets
+Discussion around emerging Rust applications, threat models considered, and how to accompany the ongoing trend
+of transitioning to Rust
+
+3. Rust foundations
+Semantics of the language and borrow-checker, and how to use it as a basis to establish the soundness
+of verification tools, and develop new program logics.
 
     Composition of the organizing team
 
