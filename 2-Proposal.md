@@ -2,10 +2,7 @@ Website says: "Our applications are typically 5 pages long."
 
 The proposal text must be written in English and should clearly describe the following aspects of the proposed seminar:
 
-    // For resubmissions: Overview of what changed as well as a discussion of the feedback received and how you addressed it
-    // For Dagstuhl Perspectives Workshops: A concept for the Dagstuhl Manifesto and/or a plan of how it would be created
-
-    Summary of the field(s) of research within which the topic of the proposed seminar lies
+# Summary of the field(s) of research within which the topic of the proposed seminar lies
 
 Over the past decade, the Rust programming language has been gaining traction as an alternative
 to languages such as C or C++ for low-level, security-critical programming. This success especially
@@ -38,42 +35,109 @@ operating systems, security monitors, or the Rust standard library itself, the m
 duplicated work, both in terms of approaches and program logics being developed, but also in the engineering
 infrastructure needed to parse Rust programs and interact with existing Rust compilation toolchains (i.e., rustc)
 to extract the semantic information needed to efficiently reason about programs. To assist with the widespread transition
-to safe Rust coding, it is therefore paramount gather the Rust formal verification community in order to share ideas
+to safe Rust coding, it is therefore paramount to gather the Rust formal verification community in order to share ideas
 and implementation efforts, and identify impactful targets for novel analyses and verification tools.
 
-    Description of the seminar topics
+# Description of the seminar topics
 
-This seminar will focus on applications of formal verification to the Rust programming language and ecosystem.
-To do so, we will work around three main axes.
+This seminar will focus on the theory and practice of Rust formal analysis. Specifically, we will
+focus on three intertwined problems: first, the theoretical foundation of Rust; second, the
+theoretical foundation for Rust analyses; and third, the engineer practice and tool ecosystem that
+implements those analyses.
 
-1. Existing tools and ongoing developments
-Overview of existing approaches, duplication, create new connections
-Common engineering problems, interaction with Rust compiler and compiler developers
-How to leverage a rich literature on formal verification in other languages?
+For Rust foundations, the situation remains, to this day, that many corners of the language are
+ill-defined. While foundational work has succeeded in shoring up the theoretical basis of the
+language (notably, RustBelt), many corners of the language remain unexplored (from a foundational
+perspective), such as its trait system. Furthermore, several attempts at improved the Rust language
+have stalled, either because of the lack of confidence in how they interact with the rest of the
+language in terms of soundness, or simply because enunciating their theory cleanly and neatly
+remains difficult, for lack of a good, reference semantics for the language. Examples include the
+view types proposal (never implemented), ongoing rewrites of the borrow checker (still not ready to
+be merged), or a proposal for a new trait system for Rust (whose behavior differs from the previous
+implementation, but which, lacking a formal model, cannot be conclusively determined to be the
+correct behavior).
 
-2. Emerging targets and properties
-Survey of common vulnerabilities, identification of missing analysis and verification targets
-Discussion around emerging Rust applications, threat models considered, and how to accompany the ongoing trend
-of transitioning to Rust
+It therefore remains difficult to confidently develop analyses, or reason about Rust programs, when
+the semantics of Rust itself is the topic of such debate. For these reasons, semantics of the
+language and its borrow-checker, and in particular, how to form a basis to establish the soundness
+of verification tools, will be a first focus of this seminar.
 
-3. Rust foundations
-Semantics of the language and borrow-checker, and how to use it as a basis to establish the soundness
-of verification tools, and develop new program logics.
+Next, many analyses try to leverage Rust's unique ownership discipline to simplify reasoning, or to
+make implementations more efficient. We propose to focus, as a second axis, on a broader re-thinking
+of existing analyses in the context of Rust; what Rust's ownership means for e.g. resource analysis
+(as exemplified by RaRust), property-based testing, and many other analyses. While existing program
+verification frameworks do leverage ownership as means to automate and/or simplify reasoning, we
+believe there is more potential to be tapped in order to make the analysis of Rust programs
+meaningful.
 
-    Composition of the organizing team
+As a third axis, we propose to focus specifically on tooling. There is a considerable amount of
+design and implementation work that needs to be addressed in this area, notably:
+- many analyses re-implement a frontend to the Rust compiler at considerable engineering cost; could
+  the community standardize on one given framework (such as the Charon project), and if not, what
+  are the roadblocks?
+- what needs to be implemented in the Rust compiler to make analyses easier to implement?
+- what is the status of the Rust specification language; can progress on this specific point happen
+  through focused working session as part of this Rust seminar?
 
-List 4 participants, emphasize different tools, approaches.
+Finally, as a transversal axis, we propose to put all of the ideas above in practice by identifying
+common vulnerabilities, new threat models, and from there on, forming a list of missing analyses and
+verification targets which could be implemented as end-to-end results that rely on improvements
+along all three axes above.
 
-    Expected results (outcome) of the seminar
+We remark that browsing the Dagstuhl archives, we could not find a single seminar focusing on Rust
+specifically; given the excitement about Rust in the research community, we think it is timely and
+important to gather researchers on this particular topic as soon as possible!
 
-List of concrete problems related to interactions with Rust limiting tools expressiveness and effectiveness
-Survey of the state of Rust semantics and foundations for verification and analysis tools
-Taxonomy of Rust vulnerabilities and pitfalls, as well as formal properties of interest to prevent them
-Benchmarking suite for static analysis (covering different Rust features, common classes of vulnerabilities identified above), and
-    "proof ladder" for deductive verification tools, fostering comparison and development of tooling
-Common, shared engineering infrastructure to develop new tools for Rust
+<!-- 1. Existing tools and ongoing developments -->
+<!-- Overview of existing approaches, duplication, create new connections -->
+<!-- Common engineering problems, interaction with Rust compiler and compiler developers -->
+<!-- How to leverage a rich literature on formal verification in other languages? -->
 
-    Ideas about the structure of the seminar
+<!-- 2. Emerging targets and properties -->
+<!-- Survey of common vulnerabilities, identification of missing analysis and verification targets -->
+<!-- Discussion around emerging Rust applications, threat models considered, and how to accompany the ongoing trend -->
+<!-- of transitioning to Rust -->
+
+# Composition of the organizing team
+
+Our organizing team represents a broad cross-section of the Rust analysis community, with four
+different tools represented (Verus, Prusti, Charon and Aeneas), a variety of seniority levels,
+geographical diversity (two US and two European organizers), and one industry member who has been
+involved in driving verified Rust code into production.
+
+The variety of tools also reflects a variety of approaches:
+- the Verus Rust verifier emphasizes an SMT-first approach while leveraging Rust's ownership to
+  efficiently encode Rust programs to SMT 
+- the Prusti Rust verifier relies on the Viper infrastructure, where Rust's ownership discipline
+  guides the applications of rules in separation logic
+- the Aeneas Rust verifier relies on backwards functions to translate Rust programs into a pure
+  equivalent that is sent to an interactive prover, with a particular emphasis on Lean.
+
+We believe this variety will prevent one particular style from being over-represented, and will
+encourage a broad discussion of possible approaches.
+
+Finally, two of the organizers have significant experience with the Charon Rust analysis toolkit,
+which is currently used by several tools, notably Aeneas (Rust verifier), Eurydice (Rust to C
+compiler), RaRust (Rust resource analysis), and several more.
+
+
+# Expected results (outcome) of the seminar
+
+We expect several outcomes, in no particular order:
+- a list of concrete engineering problems that ought to be fixed in Rust to facilitate tool
+  expressiveness and effectiveness;
+- additional and/or improved common, shared engineering infrastructure to develop new tools for Rust
+- new lines of work towards clarifying the semantics of Rust and ultimately improving the language
+  specification;
+- a survey (or SoK) on the state of Rust verification and/or analysis tools;
+- a taxonomy of Rust vulnerabilities and pitfalls, as well as formal properties of interest to
+  prevent them -- this could foster new avenues for fresh research
+- a benchmarking suite for static analysis (covering different Rust features, common classes of
+  vulnerabilities identified above), and "proof ladder" for deductive verification tools, fostering
+  comparison and development of tooling
+
+
+# Ideas about the structure of the seminar
 
 Aim for a short seminar (3 days):
     Day 1, morning: Quick presentations from all participants (20 minutes) about their tools, scope, expressiveness, and common difficulties interacting with Rust
@@ -109,7 +173,7 @@ Focus on Rust.
 (check other Dagstuhl seminars, especially related to abstract interpretation/program analysis)
 -> Nothing on Rust in 2024 to 2027
 
-    Conferences and research projects within related topics, and why it is justified to hold such a seminar at Dagstuhl
+# Conferences and research projects within related topics, and why it is justified to hold such a seminar at Dagstuhl
 
 RustVerify -> Focus on presenting tools, no time for deep dive into challenges/discussion/hacking
 
