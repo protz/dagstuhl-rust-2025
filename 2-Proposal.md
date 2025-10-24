@@ -69,6 +69,7 @@ of existing analyses in the context of Rust; what Rust's ownership means for e.g
 verification frameworks do leverage ownership as means to automate and/or simplify reasoning, we
 believe there is more potential to be tapped in order to make the analysis of Rust programs
 meaningful.
+PM: what does "meaningful" mean here?
 
 As a third axis, we propose to focus specifically on tooling. There is a considerable amount of
 design and implementation work that needs to be addressed in this area, notably:
@@ -78,11 +79,15 @@ design and implementation work that needs to be addressed in this area, notably:
 - what needs to be implemented in the Rust compiler to make analyses easier to implement?
 - what is the status of the Rust specification language; can progress on this specific point happen
   through focused working session as part of this Rust seminar?
+PM: related to my comment about "engineering" below, I would emphasize "concepts", "algorithms", etc. and
+de-emphasize "implementation".
+
 
 Finally, as a transversal axis, we propose to put all of the ideas above in practice by identifying
 common vulnerabilities, new threat models, and from there on, forming a list of missing analyses and
 verification targets which could be implemented as end-to-end results that rely on improvements
 along all three axes above.
+PM: Do we want to give this seminar a security spin, or does "vulnerabilities" include correctness bugs?
 
 We remark that browsing the Dagstuhl archives, we could not find a single seminar focusing on Rust
 specifically; given the excitement about Rust in the research community, we think it is timely and
@@ -136,6 +141,14 @@ We expect several outcomes, in no particular order:
   vulnerabilities identified above), and "proof ladder" for deductive verification tools, fostering
   comparison and development of tooling
 
+PM: I would de-emphasize "engineering" in the proposal. We all agree on the importance of tool development, but many
+academics interpret "engineering" as the opposite of "science" ("something is *just* engineering").
+
+PM: We might want to make the distinction between safe and unsafe Rust more explicit. One can view most of the verification work
+on Rust as either (1) leveraging the guarantees of safe Rust to make verification simpler, or (2) proving that unsafe Rust is 
+actually safe and has the intended behavior. For many practical applications, tools will have to support both, but it is an open
+problem how to get there.
+
 
 # Ideas about the structure of the seminar
 
@@ -166,6 +179,7 @@ Aim for a short seminar (3 days):
         * Prototypes of novel analyses
         * Larger benchmarking suite and proof ladder for different tools
 
+PM: I the afternoon of day 3 realistic? 
 
     Difference to other Dagstuhl Seminars within related topics, in particular those within the same topic
 
