@@ -13,8 +13,7 @@ Boisseau, Guillaume, Inria Paris, France
 // Creusot
 Jourdan, Jacques-Henri, CNRS, France
 Guéneau, Armaël, Inria Saclay, France
-// BP: Do you mean he *is* at a start-up?
-// Xavier is not at a start-up. Not sure it makes sense to invite him
+// Xavier is now at a start-up. Not sure it makes sense to invite him
 
 // Flowistry
 Crichton, Will, Brown University, USA
@@ -27,7 +26,7 @@ Vazou, Niki, IMDEA, Spain
 Ayoun, Sacha-Élie, Imperial College, UK
 
 // BP: I can ask around.  Celina has been shifted to work on Rust compilation times, but she might still be interested.
-// Kani (not sure who's best to invite
+// Kani (not sure who's best to invite)
 Joshi, Rajeev, AWS, USA (co-organizer of the ETAPS Rust workshop)
 Schwartz-Narbonne, Daniel, AWS, USA
 Tautschnig, Michael, AWS, USA
@@ -36,7 +35,9 @@ Hassan, Zyad, AWS, USA
 
 // Prusti
 Summers, Alexander, UBC, Canada
-//PM: I'd be happy to invite PhD students from the Prusti team if we have space
+Fiala, Jonas, ETH Zurich, Switzerland  // PhD student
+Mayerl, Thomas, ETH Zurich, Switzerland  // PhD student
+Grannan, Zack, UBC, Canada  // PhD student
 
 // RefinedRust
 Jung, Ralf, ETH Zurich, Switzerland
@@ -102,12 +103,13 @@ Donaldson, Alastair, Imperial College London, UK // Compiler testing for Rust
 // Rust analysis tools? maybe inform the design of Rust...? then perhaps we could consider https://safecpp.org/draft.html
 // What about people building the infrastructure used by some Rust verifiers, Coma, Viper, Why3
 // JP: I'm sympathetic to that
+
 // What about people from the Rust language/compiler team, in particular, Niko Matsakis and Felix Klock
 // JP: yes to Niko -- not sure if Felix is interested in these academic-ish endeavors, but worth a
 // try, I'm asking around to see who else might be good candidates
 // BP: Yes, I think Niko would be a good idea.  Felix left Amazon; I'm not sure what he's working on now.
 
-// BP: Seems reasonable to me
+// BP: Seems reasonable to me. PM: Yes
 // Yusuke Matsushita -- he was behind the prophecy variables... and the RustHornBelt work
 
-// People from Ferrocenous?   // BP: Yes, that seems potentially interesting.
+// People from Ferrocenous?   // BP: Yes, that seems potentially interesting. PM: Yes
