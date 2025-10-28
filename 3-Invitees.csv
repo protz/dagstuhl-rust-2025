@@ -28,6 +28,8 @@ Ayoun, Sacha-Élie, Imperial College, UK
 
 // BP: I can ask around.  Celina has been shifted to work on Rust compilation times, but she might still be interested.
 // Kani (not sure who's best to invite)
+// BP: Update: Michael Tautschnig recently gave a talk on the Rust verification competition and mentioned
+//     he's working on pushing the Rust spec effort ahead, so we should definitely keep him on the list.
 Joshi, Rajeev, AWS, USA (co-organizer of the ETAPS Rust workshop)
 Schwartz-Narbonne, Daniel, AWS, USA
 Tautschnig, Michael, AWS, USA
