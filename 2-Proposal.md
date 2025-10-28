@@ -69,8 +69,9 @@ of existing analyses in the context of Rust; how Rust's ownership impacts, e.g.,
 (as exemplified by RaRust), property-based testing, and many other analyses. While existing program
 verification frameworks do leverage ownership as a means to automate and/or simplify reasoning, we
 believe there is more potential to be tapped in order to make the analysis of Rust programs
-meaningful.
+generally more efficient thanks to the ownership guarantees offered by the language.
 PM: what does "meaningful" mean here?
+JP: tried to rephrase
 
 As a third axis, we propose to focus specifically on tooling. There is a considerable amount of
 design and implementation work that needs to be addressed in this area, notably:
@@ -157,6 +158,7 @@ BP: I'm not sure SoK is a sufficiently well-known acronym to use here.
 BP: Same concern as above re: "vulnerabilities"
 
 BP: What is a "proof ladder"?
+JP: set of representative examples in order of increasing difficulty
 
 BP: Some additional ideas:
 - A shared understanding of the advantages and disadvantages of existing analysis techniques
@@ -171,8 +173,9 @@ Aim for a short seminar (3 days):
     Day 1, morning: Quick presentations from all participants (20 minutes) about their tools, scope, expressiveness, and common difficulties interacting with Rust
 
 BP: 20 minutes each, right?
+JP: yes
 
-    All working groups come with a summary to the broader audience at the end of (BP: each?) the session
+    All working groups come with a summary to the broader audience at the end of each session
     Day 1, afternoon: Working Groups
         * Survey of RUSTSEC to distill common classes of vulnerabilities (BP: Same as above re: vulnerabilities)
         * Overview of the Rust semantics, and missing/misunderstood concepts
@@ -198,6 +201,7 @@ BP: 20 minutes each, right?
 
 PM: I the afternoon of day 3 realistic? 
 BP: It does seem like a lot for an afternoon
+JP: I think we were envisioning parallel sessions where people can join one or the other
 
 BP: For Day 2 afternoon, is it realistic that we can come up with good analysis/verification targets
     in the morning?  Or are we going to have to prepare something in advance?  Both seem potentially
@@ -209,7 +213,9 @@ Focus on Rust.
 (check other Dagstuhl seminars, especially related to abstract interpretation/program analysis)
 -> Nothing on Rust in 2024 to 2027
 
-BP: What about before 2024?  Are there non-Rust seminars on analysis + verification for other
+BP: What about before 2024?
+JP: nothing either, I went through all of the archives 
+BP: Are there non-Rust seminars on analysis + verification for other
 languages?
 
 # Conferences and research projects within related topics, and why it is justified to hold such a seminar at Dagstuhl
