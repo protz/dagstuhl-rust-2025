@@ -141,6 +141,8 @@ We expect several outcomes, in no particular order:
 - a call to arms for formalization experts, pointing them at critical, understudied places in the Rust language;
 - new ideas for increasing adoption of these tools and techniques by the Rust community.
 
+PM: The list is very long and does not seem realistic for a 3-day seminar (especially if we devote a half day to a competition and another half day to a hackathon (which I am still skeptical about). At the very least, we should be consistent: Every expected result should be reflected in the schedule, such that it is clear how we plan to achieve the result. Personally, I believe that we would achieve more if we focused a bit more. Some items on the list seem big enough for a seminar on their own.
+
 # Ideas about the structure of the seminar
 
 Aim for a short seminar (3 days):
