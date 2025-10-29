@@ -4,7 +4,7 @@ The proposal text must be written in English and should clearly describe the fol
 
 # Summary of the field(s) of research within which the topic of the proposed seminar lies
 
-Over the past decade, the Rust programming language has been gaining traction as an alternative
+Over the past decade, the Rust programming language has been gaining traction as a safer alternative
 to languages such as C or C++ for low-level, security-critical programming. This success stems in
 large part from several key features of the language: Rust supports the low-level idioms and performance
 commonly associated with C or C++ while providing memory safety by construction thanks to its rich, ownership-based
@@ -21,8 +21,9 @@ _panic-freedom_ of their code.  Second, while highly effective, the Rust _borrow
 restrictive in its quest to ensure that Rust code abides by the ownership-based discipline
 underlying memory safety.  To work around these restrictions, Rust provides an _unsafe_ escape
 hatch, allowing for more complex aliasing and memory patterns, at the cost of compile-time safety
-guarantees. Last, beyond safety, Rust does not guarantee _correctness_, _reliability_, or
-_security_, leaving Rust code potentially susceptible to a range issues.
+guarantees, such that programmers need to ensure the safety of their code. 
+Last, beyond safety, Rust does not guarantee _correctness_, _reliability_, or
+_security_, leaving Rust code potentially susceptible to a range of errors and vulnerabilities.
 
 To address these issues, the formal verification community recently started investigating the development of
 static analysis and deductive verification tools, aiming to further raise the confidence and reliability
@@ -38,13 +39,18 @@ infrastructure needed to parse Rust programs and interact with existing Rust com
 to extract the semantic information needed to efficiently reason about programs. To assist with the widespread transition
 to safe Rust coding, it is therefore paramount to gather the Rust formal verification community in order to share ideas
 and implementation efforts, and identify impactful targets for novel analyses and verification tools.
+//PM: The above paragraph could be more convincing. I think we have many more problems than just duplication of work and, in particular,
+//we have *scientific* problems to solve. In my eyes, existing tools are not nearly ready to verify, e.g., operating systems (as we claim).
+//So I would describe the state of the art as: we have very promising initial results, especially for safe Rust. But a lot remains to be done
+//to scale verification to realistic Rust systems, in particular, to fully handle unsafe Rust, interior mutability, asynchronous code, etc.
+//Since *all* tools are facing these challenges, we propose to bring the tool developers together to find common solutions.
+
 
 # Description of the seminar topics
 
-This seminar will focus on the theory and practice of Rust formal analysis. Specifically, we will
-focus on three intertwined problems: first, the theoretical foundation of Rust; second, the
-theoretical foundation for Rust analyses; and third, the engineering practices and tool ecosystem that
-implement those analyses.
+This seminar will focus on the theory and practice of Rust formal analysis and verification. Specifically, we will
+focus on three intertwined problems: first, the theoretical foundation of the Rust language; second, techniques for the analysis and verification
+of Rust programs; and third, the engineering practices and tool ecosystem that implement those techniques.
 
 For Rust foundations, the situation remains, to this day, that many corners of the language are
 ill-defined. While foundational work (notably, RustBelt) has succeeded in shoring up the theoretical basis of the
@@ -58,40 +64,30 @@ be merged), or a proposal for a new trait system for Rust (whose behavior differ
 implementation, but which, lacking a formal model, cannot be conclusively determined to be the
 correct behavior).
 
-It therefore remains difficult to confidently develop analyses, or reason about Rust programs, when
+It therefore remains difficult to confidently develop analysis and verification techniques, when
 the semantics of Rust are still undergoing such debate. For these reasons, the semantics of the
 language and its borrow-checker, and in particular, how to form a basis to establish the soundness
 of verification tools, will be the first focus of this seminar.
 
-Next, many analyses try to leverage Rust's unique ownership discipline to simplify reasoning, or to
-make implementations more efficient. We propose to focus, as a second axis, on a broader re-thinking
-of existing analyses in the context of Rust; how Rust's ownership impacts, e.g., resource analysis
-(as exemplified by RaRust), property-based testing, and many other analyses. While existing program
-verification frameworks do leverage ownership as a means to automate and/or simplify reasoning, we
+Next, many analysis and verification techniques leverage Rust's unique ownership discipline to simplify reasoning, or to
+make reasoning tools more efficient. As a second axis, an important focus of our seminar is the extension of these techniques to the
+full Rust language. Moreover, we propose to focus on a broader re-thinking
+of existing techniques in the context of Rust; how Rust's ownership impacts, e.g., resource analysis
+(as exemplified by RaRust), property-based testing, and many other techniques. While existing program
+verification frameworks do leverage ownership as a means to automate or simplify reasoning, we
 believe there is more potential to be tapped in order to make the analysis of Rust programs
 generally more efficient thanks to the ownership guarantees offered by the language.
-PM: what does "meaningful" mean here?
-JP: tried to rephrase
 
 As a third axis, we propose to focus specifically on tooling. There is a considerable amount of
 design and implementation work that needs to be addressed in this area, notably:
-- Many analyses re-implement a frontend to the Rust compiler at considerable engineering cost; could
-  the community standardize on one framework (such as the Charon project), and if not, what
-  are the roadblocks?
-- What needs to be implemented in the Rust compiler to make analyses easier to implement?
-- What is the status of the Rust specification language?  Can progress on this specific point happen
-  through focused working session as part of this Rust seminar?
-PM: related to my comment about "engineering" below, I would emphasize "concepts", "algorithms", etc. and
-de-emphasize "implementation".
-
+- What are the theoretical and practical challenges to integrating necessary infrastructure for analysis and verification into the Rust compiler? Could
+  the community standardize on one framework (such as the Charon project or Place Capability Graphs), and if not, what are the roadblocks?
+- How can we design a unified Rust specification language that enables the interoperability between different tools and allows the community to develop common verified libraries?
 
 Finally, as a transversal axis, we propose to put all of the ideas above in practice by identifying
-common vulnerabilities, new threat models, and from there on, forming a list of missing analyses and
-verification targets which could be implemented as end-to-end results that rely on improvements
-along all three axes above.
-PM: Do we want to give this seminar a security spin, or does "vulnerabilities" include correctness bugs?
-BP: I agree; "vulnerabilities" and "thread models" are very security specific.  I love security, but
-    should we cast a wider net here?
+language features, implementation idioms, and program properties that are not sufficiently supported
+by state-of-the-art techniques and tools, resulting in a list of action items for the community to
+steer further research and assess progress.
 
 We remark that browsing the Dagstuhl archives, we could not find a single seminar focusing on Rust
 specifically; given the excitement about Rust in the research community, we think it is timely and
@@ -133,63 +129,43 @@ compiler), RaRust (Rust resource analysis), and several more.
 # Expected results (outcome) of the seminar
 
 We expect several outcomes, in no particular order:
-- a list of concrete engineering problems that ought to be fixed in Rust to facilitate tool
-  expressiveness and effectiveness;
-- additional and/or improved common, shared engineering infrastructure to develop new tools for Rust
-- new lines of work towards clarifying the semantics of Rust and ultimately improving the language
-  specification;
-- a survey (or SoK) on the state of Rust verification and/or analysis tools;
-- a taxonomy of Rust vulnerabilities and pitfalls, as well as formal properties of interest to
-  prevent them -- this could foster new avenues for fresh research
-- a benchmarking suite for static analysis (covering different Rust features, common classes of
-  vulnerabilities identified above), and a "proof ladder" for deductive verification tools, fostering
+- a systematic approach for the Rust compiler to facilitate the development of reasoning tools, along with concrete tasks to implement it;
+- a shared common infrastructure to develop new tools for Rust;
+- new lines of work towards clarifying the semantics of Rust and ultimately improving the language specification;
+- a survey of the state of Rust verification and analysis tools;
+- a taxonomy of Rust language features, coding idioms, and program properties to guide the further development of analysis and verification techniques
+- a benchmarking suite based on this taxonomy, including a series of verification challenges of increasing difficulty for analysis and verification tools, fostering
   comparison and development of tooling
-
-PM: I would de-emphasize "engineering" in the proposal. We all agree on the importance of tool development, but many
-academics interpret "engineering" as the opposite of "science" ("something is *just* engineering").
-
-PM: We might want to make the distinction between safe and unsafe Rust more explicit. One can view most of the verification work
-on Rust as either (1) leveraging the guarantees of safe Rust to make verification simpler, or (2) proving that unsafe Rust is 
-actually safe and has the intended behavior. For many practical applications, tools will have to support both, but it is an open
-problem how to get there.
-
-BP: I'm not sure SoK is a sufficiently well-known acronym to use here.
-
-BP: Same concern as above re: "vulnerabilities"
-
-BP: What is a "proof ladder"?
-JP: set of representative examples in order of increasing difficulty
-
-BP: Some additional ideas:
-- A shared understanding of the advantages and disadvantages of existing analysis techniques
-- New directions for combining the best ideas from existing analysis techniques
-- A call to arms for formalization experts, pointing them at critical, understudied places in the Rust language
-- New ideas for increasing adoption of these tools and techniques by the Rust community
+- a shared understanding of the advantages and disadvantages of existing analysis techniques;
+- new directions for combining the best ideas from existing analysis techniques;
+- a call to arms for formalization experts, pointing them at critical, understudied places in the Rust language;
+- new ideas for increasing adoption of these tools and techniques by the Rust community.
 
 # Ideas about the structure of the seminar
 
 Aim for a short seminar (3 days):
 
-    Day 1, morning: Quick presentations from all participants (20 minutes) about their tools, scope, expressiveness, and common difficulties interacting with Rust
+    Day 1, morning: Quick presentations from all participants (10 minutes) about their tools, scope, expressiveness, and common difficulties interacting with Rust
 
 BP: 20 minutes each, right?
 JP: yes
+PM: I changed this to 10. Even for a small seminar, letting everybody speak for 20mins does not seem feasible.
 
     All working groups come with a summary to the broader audience at the end of each session
     Day 1, afternoon: Working Groups
-        * Survey of RUSTSEC to distill common classes of vulnerabilities (BP: Same as above re: vulnerabilities)
-        * Overview of the Rust semantics, and missing/misunderstood concepts
-        * Discussion of a common specification language for Rust
+        * Analysis and verification challenges (language features, idioms, program properies)
+        * Rust semantics with a focus on unclear concepts
+        * A common specification language for Rust
 
     Day 2, morning: Working groups
-        * Suite of testcases for common classes of vulnerabilities
+        * Benchmark suite
         * Focus groups for new analysis areas
         * Discussion of well-established C verification tools, and connections/applicability to Rust
         * Interacting with the Rust compiler, and common engineering challenges
 
     Day 2, afternooon:
         * "VerifyThis"-like challenge for deductive verification tools
-        * "AnalyzeThat"-like challenge for static analysis tools, using testcases established in the morning
+        * "AnalyzeThat"-like challenge for static analysis tools, using benchmarks established in the morning
 
     Day 3, morning:
         * Debrief of differences, strengths and weaknesses of existing tools, based on day 2 challenge
