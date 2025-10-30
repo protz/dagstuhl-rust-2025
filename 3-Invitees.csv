@@ -1,22 +1,22 @@
 Last Name, First Name, Affiliation, Country, Email, Junior, Female, Industrial, Homepage, Topic, Round
 
 // Organizers
-Fromherz, Aymeric, Inria Paris, France
-Müller, Peter, ETH Zurich, Switzerland
-Parno, Bryan, Carnegie Mellon University, USA
-Protzenko, Jonathan, Google, USA
+Fromherz, Aymeric, Inria Paris, France, aymeric.fromherz@inria.fr
+Müller, Peter, ETH Zurich, Switzerland, peter.mueller@inf.ethz.ch
+Parno, Bryan, Carnegie Mellon University, USA, parno@cmu.edu
+Protzenko, Jonathan, Google, USA, jonathan.protzenko@gmail.com
 
 // Aeneas
-Ho, Son, Microsoft Azure Research, UK
-Boisseau, Guillaume, Inria Paris, France
+Ho, Son, Microsoft Azure Research, UK, t-sonho@microsoft.com
+Boisseau, Guillaume, Inria Paris, France, guillaume.boisseau@inria.fr
 
 // Creusot
-Jourdan, Jacques-Henri, CNRS, France
-Guéneau, Armaël, Inria Saclay, France
+Jourdan, Jacques-Henri, CNRS, France, jacques-henri.jourdan@cnrs.fr
+Guéneau, Armaël, Inria Saclay, France, armael.gueneau@inria.fr
 // Xavier is now at a start-up. Not sure it makes sense to invite him
 
 // Flowistry
-Crichton, Will, Brown University, USA
+Crichton, Will, Brown University, USA,
 Krishnamurthi, Shriram,  Brown University, USA
 
 // Flux
