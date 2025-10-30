@@ -16,15 +16,15 @@ Guéneau, Armaël, Inria Saclay, France, armael.gueneau@inria.fr
 // Xavier is now at a start-up. Not sure it makes sense to invite him
 
 // Flowistry
-Crichton, Will, Brown University, USA,
-Krishnamurthi, Shriram,  Brown University, USA
+Crichton, Will, Brown University, USA, will_crichton@brown.edu
+Krishnamurthi, Shriram,  Brown University, USA, shriram@brown.edu
 
 // Flux
-Jhala, Ranjit, UCSD, USA
-Vazou, Niki, IMDEA, Spain
+Jhala, Ranjit, UCSD, USA, jhala@cs.ucsd.edu
+Vazou, Niki, IMDEA, Spain, niki.vazou@imdea.org
 
 // Gillian-Rust
-Ayoun, Sacha-Élie, Imperial College, UK
+Ayoun, Sacha-Élie, Imperial College, UK, s.ayoun17@imperial.ac.uk
 
 // BP: I can ask around.  Celina has been shifted to work on Rust compilation times, but she might still be interested.
 // Kani (not sure who's best to invite)
@@ -32,18 +32,18 @@ Ayoun, Sacha-Élie, Imperial College, UK
 //     he's working on pushing the Rust spec effort ahead, so we should definitely keep him on the list.
 Joshi, Rajeev, AWS, USA (co-organizer of the ETAPS Rust workshop)
 Schwartz-Narbonne, Daniel, AWS, USA
-Tautschnig, Michael, AWS, USA
+Tautschnig, Michael, AWS, USA, michael@tautschnig.net
 Val, Celina, AWS, Canada
 Hassan, Zyad, AWS, USA
 
 // Prusti
-Summers, Alexander, UBC, Canada
-Fiala, Jonas, ETH Zurich, Switzerland  // PhD student
-Mayerl, Thomas, ETH Zurich, Switzerland  // PhD student
-Grannan, Zack, UBC, Canada  // PhD student
+Summers, Alexander, UBC, Canada, alex.summers@ubc.ca
+Fiala, Jonas, ETH Zurich, Switzerland, jonas.fiala@inf.ethz.ch
+Mayerl, Thomas, ETH Zurich, Switzerland, thomas.mayerl@inf.ethz.ch
+Grannan, Zack, UBC, Canada, zgrannan@cs.ubc.ca
 
 // RefinedRust
-Jung, Ralf, ETH Zurich, Switzerland
+Jung, Ralf, ETH Zurich, Switzerland, ralf.jung@inf.ethz.ch
 Dreyer, Derek, MPI-SWS, Germany
 Sammler, Michael, IST, Austria
 Krebbers, Robert, Radboud University Nijmegen, The Netherlands
