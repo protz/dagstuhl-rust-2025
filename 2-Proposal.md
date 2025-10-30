@@ -32,18 +32,32 @@ tools for other languages (e.g., C) to target Rust, or developed new approaches 
 specificities, in both cases leveraging invariants provided by the type system to simplify analysis and verification.
 //AF: Do we need explicit citations/names here?
 
-While several of these approaches are now able to handle complex applications, e.g., cryptographic implementations,
-operating systems, security monitors, or the Rust standard library itself, the multiplicity of tools leads to
-duplicated work, in both the approaches and program logics being developed, and also in the engineering
-infrastructure needed to parse Rust programs and interact with existing Rust compilation toolchains (i.e., `rustc`)
-to extract the semantic information needed to efficiently reason about programs. To assist with the widespread transition
-to safe Rust coding, it is therefore paramount to gather the Rust formal verification community in order to share ideas
-and implementation efforts, and identify impactful targets for novel analyses and verification tools.
-//PM: The above paragraph could be more convincing. I think we have many more problems than just duplication of work and, in particular,
-//we have *scientific* problems to solve. In my eyes, existing tools are not nearly ready to verify, e.g., operating systems (as we claim).
-//So I would describe the state of the art as: we have very promising initial results, especially for safe Rust. But a lot remains to be done
-//to scale verification to realistic Rust systems, in particular, to fully handle unsafe Rust, interior mutability, asynchronous code, etc.
-//Since *all* tools are facing these challenges, we propose to bring the tool developers together to find common solutions.
+<!-- While several of these approaches are now able to handle complex applications, e.g., cryptographic implementations, -->
+<!-- operating systems, security monitors, or the Rust standard library itself, the multiplicity of tools leads to -->
+<!-- duplicated work, in both the approaches and program logics being developed, and also in the engineering -->
+<!-- infrastructure needed to parse Rust programs and interact with existing Rust compilation toolchains (i.e., `rustc`) -->
+<!-- to extract the semantic information needed to efficiently reason about programs. To assist with the widespread transition -->
+<!-- to safe Rust coding, it is therefore paramount to gather the Rust formal verification community in order to share ideas -->
+<!-- and implementation efforts, and identify impactful targets for novel analyses and verification tools. -->
+<!-- //PM: The above paragraph could be more convincing. I think we have many more problems than just duplication of work and, in particular, -->
+<!-- //we have *scientific* problems to solve. In my eyes, existing tools are not nearly ready to verify, e.g., operating systems (as we claim). -->
+<!-- //So I would describe the state of the art as: we have very promising initial results, especially for safe Rust. But a lot remains to be done -->
+<!-- //to scale verification to realistic Rust systems, in particular, to fully handle unsafe Rust, interior mutability, asynchronous code, etc. -->
+<!-- //Since *all* tools are facing these challenges, we propose to bring the tool developers together to find common solutions. -->
+
+Initial results are promising: cryptographic libraries, microkernels, security monitors and storage
+systems have been verified using Rust-based tools. In particular, code written in safe Rust *does*
+relieve the verification engineer of memory-based proof obligations, and productivity gains have
+indeed been observed. However, these initial results either target specific application domains
+(e.g. a cryptographic function that is a pure function of its inputs), or systems that do not
+necessarily represent the reality of industrial Rust code.
+
+In effect, if we want to scale up these verification results to larger, real-world Rust systems,
+notably those using a mixture of `unsafe`, interior mutability (a.k.a. dynamic borrow-checking),
+concurrency and `async`, several scientific challenges loom large, for which the current crop of
+tools proposes no definitive answer. Since all tools face these common challenges, we propose to
+bring developers of these tools together to address these common challenges, both from a scientific
+and engineering standpoint.
 
 
 # Description of the seminar topics
@@ -148,13 +162,13 @@ PM: The list is very long and does not seem realistic for a 3-day seminar (espec
 BP: I rearranged the list to put the more science-oriented items towards the top, following PM's
 theory of their importance to the panel.  Also tried to merge or at least group related items.
 
+JP: this looks good to me
+
 # Ideas about the structure of the seminar
 
 Aim for a short seminar (3 days):
 
     Day 1, morning: Quick presentations from all participants (10 minutes each) about their tools, scope, expressiveness, and common difficulties interacting with Rust
-
-PM: I changed this to 10. Even for a small seminar, letting everybody speak for 20mins does not seem feasible.
 
     All working groups come with a summary to the broader audience at the end of each session
     Day 1, afternoon: Working Groups
@@ -175,28 +189,49 @@ PM: I changed this to 10. Even for a small seminar, letting everybody speak for 
     Day 3, morning:
         * Debrief of differences, strengths and weaknesses of existing tools, based on day 2 challenge
 
-    Day 3, afternoon:
+    Day 3, afternoon (parallel sessions / focus groups):
         * Hacking on common engineering infrastructure
         * Prototypes of novel analyses
         * Larger benchmarking suite and proof ladder of increasiningly challenging examples for different tools
 
-PM: I the afternoon of day 3 realistic? 
-BP: It does seem like a lot for an afternoon
-JP: I think we were envisioning parallel sessions where people can join one or the other
-
 BP: For Day 2 afternoon, is it realistic that we can come up with good analysis/verification targets
     in the morning?  Or are we going to have to prepare something in advance?  Both seem potentially
     fraught.
+JP: I think it'd be ok to ask participants to prepare a few potential
+    challenges/targets ahead of time, then sift through them during the seminar?
 
-    Difference to other Dagstuhl Seminars within related topics, in particular those within the same topic
+# Difference to other Dagstuhl Seminars within related topics, in particular those within the same topic
 
-Focus on Rust.
-(check other Dagstuhl seminars, especially related to abstract interpretation/program analysis)
--> Nothing on Rust in 2024 to 2027
+This seminar proposes to focus exclusively on Rust; looking through the Dagstuhl
+seminar archives, it appears that no other seminar has focused on Rust before.
 
-BP: Are there non-Rust seminars on analysis + verification for other languages?
+The following seminars are loosely related:
+- 25412 Sound Static Program Analysis in Modern Software Engineering. This
+  seminar focused on static analyses at large, and how they interact with
+  software engineering processes. A particular emphasis was put on Web
+  Applications. We instead focus on Rust specifically, and on
+  the underlying scientific problems.
+- 26111 Formal Analysis and Verification in Quantum Programming Languages.
+  Verification is also something we aim for, but not in the context of quantum
+  languages.
+- 26071 Behavioural Types for Resilience. Types are a language-based technique,
+  but in our context, it is unlikely that a new type system will be devised for
+  Rust.
 
 # Conferences and research projects within related topics, and why it is justified to hold such a seminar at Dagstuhl
 
-RustVerify -> Focus on presenting tools, no time for deep dive into challenges/discussion/hacking
+There are many developer-facing Rust conferences, such as RustConf, RustNation,
+RustParis... however, these conferences focus on language discussions from the
+perspective of language designers, and not from the perspective of formal
+analysis specialists. Notably, not a single talk at RustConf mentioned the word
+"formal".
 
+On the PL research side, there is RustVerify, a workshop with no proceedings
+traditionally associated with ETAPS. However, RustVerify follows a traditional
+conference format, meaning that the presentations are very static, and leave
+few opportunities for interactions in small groups with measurable outcomes. 
+
+We envision that Dagstuhl will provide the necessary environment to get
+engagement from both sides of this community (developers and PL researchers) and
+create new collaborations beyond Ralf Jung's (excellent) ongoing interaction
+with the Rust compiler team.

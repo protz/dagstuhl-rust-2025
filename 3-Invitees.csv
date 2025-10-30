@@ -82,7 +82,6 @@ Sunshine, Joshua, CMU, USA
 // How about other static analysis people?
 
 // hax
-Franceschino, Lucas, Cryspen, France
 Blaudeau, Clément, Cryspen, France
 Bhargavan, Karthikeyan, Cryspen, France
 
@@ -107,15 +106,10 @@ Donaldson, Alastair, Imperial College London, UK // Compiler testing for Rust
 // What about people building the infrastructure used by some Rust verifiers, Coma, Viper, Why3
 // JP: I'm sympathetic to that
 
-// What about people from the Rust language/compiler team, in particular, Niko Matsakis and Felix Klock
-// JP: yes to Niko -- not sure if Felix is interested in these academic-ish endeavors, but worth a
-// try, I'm asking around to see who else might be good candidates
-// BP: Yes, I think Niko would be a good idea.  Felix left Amazon; I'm not sure what he's working on now.
-
-// BP: Seems reasonable to me. PM: Yes
-// Yusuke Matsushita -- he was behind the prophecy variables... and the RustHornBelt work
-
-// People from Ferrocenous?   // BP: Yes, that seems potentially interesting. PM: Yes
+// JP: could not determine who Felix Klock works for now, so I left him out
+Matsakis, Niko, Amazon, US
+Matsushita, Yusuke, Kyoto University, Japan
+Gilcher, Florian, Ferrocene, Germany
 
 // How about some people from DARPA TRACTOR -- Bryan, are you on this and can
 // you suggest folks? I only know about Mike Carbin
