@@ -21,7 +21,7 @@ _panic-freedom_ of their code.  Second, while highly effective, the Rust _borrow
 restrictive in its quest to ensure that Rust code abides by the ownership-based discipline
 underlying memory safety.  To work around these restrictions, Rust provides an _unsafe_ escape
 hatch, allowing for more complex aliasing and memory patterns, at the cost of compile-time safety
-guarantees, such that programmers are trusted to ensure the safety of their code. 
+guarantees, such that programmers are trusted to ensure the safety of their code.
 Last, beyond safety, Rust does not guarantee _correctness_, _reliability_, or
 _security_, leaving Rust code potentially susceptible to a range of errors and vulnerabilities.
 
@@ -99,7 +99,7 @@ As a third axis, we propose to focus specifically on tooling. There is a conside
 design and implementation work that needs to be addressed in this area, notably:
 - What are the theoretical and practical challenges of integrating the infrastructure necessary for analysis and verification into the Rust compiler? Could
   the community standardize on one framework (such as the Charon project or Place Capability Graphs), and if not, what are the roadblocks?
-- How can we design a unified Rust program specification language that enables interoperability between different tools and allows the community to develop common verified libraries?  How could such a language simultaneously 
+- How can we design a unified Rust program specification language that enables interoperability between different tools and allows the community to develop common verified libraries?  How could such a language simultaneously
 serve a full spectrum of testing, analysis, and verification tools?
 
 Finally, as a transversal axis, we propose to put all of the ideas above into practice by identifying
@@ -130,7 +130,7 @@ involved in driving verified Rust code into production.
 
 The variety of tools also reflects a variety of approaches:
 - the Verus Rust verifier emphasizes an SMT-first approach while leveraging Rust's ownership to
-  efficiently encode Rust programs to SMT 
+  efficiently encode Rust programs to SMT
 - the Prusti Rust verifier relies on the Viper infrastructure, where Rust's ownership discipline
   guides the application of rules in separation logic
 - the Aeneas Rust verifier relies on backwards functions to translate Rust programs into a pure
@@ -163,6 +163,8 @@ BP: I rearranged the list to put the more science-oriented items towards the top
 theory of their importance to the panel.  Also tried to merge or at least group related items.
 
 JP: this looks good to me
+
+AF: Agreed
 
 # Ideas about the structure of the seminar
 
@@ -199,6 +201,9 @@ BP: For Day 2 afternoon, is it realistic that we can come up with good analysis/
     fraught.
 JP: I think it'd be ok to ask participants to prepare a few potential
     challenges/targets ahead of time, then sift through them during the seminar?
+AF: For verification targets, I believe it would need to be prepared in advance. For analysis tools, I am
+reasonably hopeful we could identify several CVEs in the morning, and spend time in the afternoon modifying/minimizing
+them to fit some existing tools.
 
 # Difference to other Dagstuhl Seminars within related topics, in particular those within the same topic
 
@@ -229,7 +234,7 @@ analysis specialists. Notably, not a single talk at RustConf mentioned the word
 On the PL research side, there is RustVerify, a workshop with no proceedings
 traditionally associated with ETAPS. However, RustVerify follows a traditional
 conference format, meaning that the presentations are very static, and leave
-few opportunities for interactions in small groups with measurable outcomes. 
+few opportunities for interactions in small groups with measurable outcomes.
 
 We envision that Dagstuhl will provide the necessary environment to get
 engagement from both sides of this community (developers and PL researchers) and
