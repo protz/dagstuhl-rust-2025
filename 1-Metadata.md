@@ -49,22 +49,19 @@ Rust, verification, program analysis, semantics, ownership
 # A short abstract
 
 The Rust programming language has exploded in popularity,
-due to its unique combination of strong performance, low-level flexibility,
-and high-level features and guarantees.
-This, in turn, has motivated a flurry of new research
-in the programming language and program semantics field. Notably,
-because Rust's type system provides so many guarantees "for free", many
-tasks, such as program verification or program analysis, become much easier in Rust,
-creating an exciting opportunity to push these techniques into the mainstream
+due to its unique combination of strong performance and the static satefy
+provided by Rust's ownership type system. This, in turn, has motivated a flurry of new research
+on program analysis and verification, aiming to leverage Rust's guarantees 
+to substantially simplify reasoning. This has created an exciting opportunity to push these techniques into the mainstream
 of program development.
 
 While many new research tools and techniques have emerged, these efforts
 have largely proceeded independently, with knowledge exchanged primarily
 through static conference papers.
-The goal of this Dagstuhl Seminar is to bring together all authors, developers and
-researchers who are involved in tools for Rust program analysis, including, but
+The goal of this Dagstuhl Seminar is to bring together the authors, developers and
+researchers who are involved in techniques and tools for Rust program analysis, including, but
 not limited to, program verification, model checking, and static analyses.
 
 We expect that this seminar will foster new collaborations, catalyze
-collective work on common engineering tasks, and create a new community
+collective work on building analysis infrastructures, and create a new community
 that captures the Rust program analysis endeavor at large.
