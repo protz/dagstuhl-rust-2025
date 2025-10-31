@@ -30,11 +30,11 @@ Ayoun, Sacha-Élie, Imperial College, UK, s.ayoun17@imperial.ac.uk
 // Kani (not sure who's best to invite)
 // BP: Update: Michael Tautschnig recently gave a talk on the Rust verification competition and mentioned
 //     he's working on pushing the Rust spec effort ahead, so we should definitely keep him on the list.
-Joshi, Rajeev, AWS, USA (co-organizer of the ETAPS Rust workshop)
-Schwartz-Narbonne, Daniel, AWS, USA
+Joshi, Rajeev, AWS, USA (co-organizer of the ETAPS Rust workshop), rjoshi@rjoshi.org
+Schwartz-Narbonne, Daniel, AWS, USA, dsn@amazon.com
 Tautschnig, Michael, AWS, USA, michael@tautschnig.net
-Val, Celina, AWS, Canada
-Hassan, Zyad, AWS, USA
+Val, Celina, AWS, Canada, celinval@amazon.com
+Hassan, Zyad, AWS, USA, zyadh@amazon.com
 
 // Prusti
 Summers, Alexander, UBC, Canada, alex.summers@ubc.ca
@@ -44,58 +44,58 @@ Grannan, Zack, UBC, Canada, zgrannan@cs.ubc.ca
 
 // RefinedRust
 Jung, Ralf, ETH Zurich, Switzerland, ralf.jung@inf.ethz.ch
-Dreyer, Derek, MPI-SWS, Germany
-Sammler, Michael, IST, Austria
-Krebbers, Robert, Radboud University Nijmegen, The Netherlands
+Dreyer, Derek, MPI-SWS, Germany, dreyer@mpi-sws.org
+Sammler, Michael, IST, Austria, Michael.Sammler@ist.ac.at
+Krebbers, Robert, Radboud University Nijmegen, The Netherlands, mail@robbertkrebbers.nl
 
 // VeriFast
-Jacobs, Bart, KU Leuven, Belgium
-Rahimi Foroushaani, Nima, KU Leuven, Belgium
+Jacobs, Bart, KU Leuven, Belgium, bart.jacobs@kuleuven.be
+Rahimi Foroushaani, Nima, KU Leuven, Belgium, nima.rahimiforoushaani@kuleuven.be
 
 //  Verus
-Hance, Travis, MPI-SWS, Germany
-Hawblitzel, Chris, Microsoft Research, USA
+Hance, Travis, MPI-SWS, Germany, travis.hance@mpi-sws.org
+Hawblitzel, Chris, Microsoft Research, USA, Chris.Hawblitzel@microsoft.com
 // BP: Marianna and Daniel lead the team that's using Verus at scale
-Rapoport, Marianna, AWS, USA
-Schoepe, Daniel, AWS, USA
+Rapoport, Marianna, AWS, USA, marianna@mrapoport.com
+Schoepe, Daniel, AWS, USA, schoeped@amazon.com
 // BP: Emina is the lead on Cedar verification, which now uses Verus and Lean
-Torlak, Emina, AWS, USA
+Torlak, Emina, AWS, USA, torlaket@amazon.com
 
 // ESMBC-Rust
-Menezes, Rafael, University of Manchester, UK
+Menezes, Rafael, University of Manchester, UK, rafael.menezes@postgrad.manchester.ac.uk
 
 // Ra-Rust
-Wang, Di, Peking University, China
+Wang, Di, Peking University, China, wangdi95@pku.edu.cn
 
 // Rudra
-Taesoo, Kim, Georgia Tech, USA
+Taesoo, Kim, Georgia Tech, USA, taesoo@gatech.edu
 
 // Yuga
-Ray, Baishakhi, Columbia University, USA
-Mulhern, Anne, Red Hat, USA
+Ray, Baishakhi, Columbia University, USA, rayb@cs.columbia.edu
+Mulhern, Anne, Red Hat, USA, mulhern@redhat.com
 
 // Borrow-Sanitizer
-McCormack, Ian, CMU, USA // PhD student
-Aldrich, Jonathan, CMU, USA
-Sunshine, Joshua, CMU, USA
+McCormack, Ian, CMU, USA, icmccorm@cs.cmu.edu
+Aldrich, Jonathan, CMU, USA, jonathan.aldrich@cs.cmu.edu
+Sunshine, Joshua, CMU, USA, sunshine@cs.cmu.edu
 
 // How about other static analysis people?
 
 // hax
-Blaudeau, Clément, Cryspen, France
-Bhargavan, Karthikeyan, Cryspen, France
+Blaudeau, Clément, Cryspen, France,
+Bhargavan, Karthikeyan, Cryspen, France, karthik@cryspen.com
 
 // Others
-Ryu, Sukyoung, KAIST, South Korea  // as far as I know, she is interested in building an analysis framework for Rust
-Miné, Antoine, Sorbonne Université, France // recent projects on abstract interpretation for Rust
-Monniaux, David, Verimag, France // same as above, as well as static analyses for compilation
-Pasareanu, Corina, Carnegie Mellon University, USA // Automated testing of Rust libraries
-Li, Guanyuan, Huawei, Hong Kong // Pushing for Rust analysis at Huawei
-Wang, Yuting, Jiaotong University, China // recent work on formal verification for Rust
-Yuan, Shenghao, Zhejiang University, China // Trying to translate Rust to Isabelle/HOL
-Delmas, David, Airbus, France // Both are using static analysis tools (Astrée) in industrial settings
-Fontayne, Rémy, Airbus, France  // and have ongoing experiments with Rust analysis for embedded systems
-Donaldson, Alastair, Imperial College London, UK // Compiler testing for Rust
+Ryu, Sukyoung, KAIST, South Korea, sryu.cs@kaist.ac.kr  // as far as I know, she is interested in building an analysis framework for Rust
+Miné, Antoine, Sorbonne Université, France, antoine.mine@lip6.fr // recent projects on abstract interpretation for Rust
+Monniaux, David, Verimag, France, david.monniaux@univ-grenoble-alpes.fr // same as above, as well as static analyses for compilation
+Pasareanu, Corina, Carnegie Mellon University, USA, pcorina@andrew.cmu.edu // Automated testing of Rust libraries
+Li, Guanyuan, Huawei, Hong Kong, liguany126@126.com // Pushing for Rust analysis at Huawei
+Wang, Yuting, Jiaotong University, China, yuting.wang@sjtu.edu.cn // recent work on formal verification for Rust
+Yuan, Shenghao, Zhejiang University, China, shenghaoyuan0928@163.com // Trying to translate Rust to Isabelle/HOL
+Delmas, David, Airbus, France, david.delmas@airbus.com // Both are using static analysis tools (Astrée) in industrial settings
+Fontayne, Rémy, Airbus, France, remy.fontayne@airbus.com  // and have ongoing experiments with Rust analysis for embedded systems
+Donaldson, Alastair, Imperial College London, UK, alastair.donaldson@imperial.ac.uk // Compiler testing for Rust
 
 // BP: At least for the initial wave of invites, I think we should focus on Rust work.
 //     Otherwise, the lines get very blurry.  For example, we might start bringing in
