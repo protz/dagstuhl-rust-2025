@@ -237,6 +237,6 @@ conference format, meaning that the presentations are very static, and leave
 few opportunities for interactions in small groups with measurable outcomes.
 
 We envision that Dagstuhl will provide the necessary environment to get
-engagement from both sides of this community (developers and PL researchers) and
+engagement from both sides of this community (PL researchers and industrial practitioners) and
 create new collaborations beyond Ralf Jung's (excellent) ongoing interaction
 with the Rust compiler team.
