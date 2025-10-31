@@ -4,7 +4,7 @@ The proposal text must be written in English and should clearly describe the fol
 
 # Summary of the field(s) of research within which the topic of the proposed seminar lies
 
-Over the past decade, the Rust programming language has been gaining traction as a safer alternative
+Over the past decade, the Rust programming language has rapidly gained traction as a safer alternative
 to languages such as C or C++ for low-level, security-critical programming. This success stems in
 large part from several key features of the language: Rust supports the low-level idioms and performance
 commonly associated with C or C++ while providing memory safety by construction thanks to its rich, ownership-based
@@ -59,15 +59,15 @@ necessarily represent the reality of industrial Rust code.
 In effect, if we want to scale up these verification results to larger, real-world Rust systems,
 notably those using a mixture of unsafe code, interior mutability (a.k.a. dynamic borrow-checking),
 concurrency and asynchronous tasks, several scientific challenges loom large, for which the existing
-techniques and tools propose no definitive answer. To address these common challenges, we propose to
+techniques and tools propose no definitive answer. Hence, we propose to
 bring developers of these techniques and tools together to address these common challenges, both from a scientific
-and engineering standpoint.
+and an engineering standpoint.
 
 
 # Description of the seminar topics
 
 This seminar will focus on the theory and practice of Rust formal analysis and verification. Specifically, we will
-focus on three intertwined problems: first, aspects of the theoretical foundation of the Rust language crucial to
+address three intertwined problems: first, the aspects of the theoretical foundation of the Rust language crucial to
 analysis and verification; second, techniques for the analysis and verification
 of Rust programs; and third, the engineering practices and tool ecosystem that implement those techniques.
 
@@ -157,8 +157,8 @@ We expect several outcomes, in no particular order:
 - a taxonomy of Rust language features, coding idioms, and program properties to guide the further development of analysis and verification techniques;
 - a benchmarking suite based on this taxonomy, including a series of verification challenges of increasing difficulty for analysis and verification tools, fostering comparison and development of tooling;
 - new ideas for increasing adoption of Rust-related tools and techniques by the Rust community;
-- a systematic approach for interfacing with the Rust compiler in order to facilitate the development of reasoning tools, along with concrete tasks to implement it;
-- a shared common infrastructure to develop new tools for Rust;
+- a systematic approach for interfacing with the Rust compiler in order to facilitate the development of reasoning tools, along with concrete tasks to implement it; and
+- a shared common infrastructure to develop new tools for Rust.
 
 
 # Ideas about the structure of the seminar
@@ -226,7 +226,7 @@ perspective of language designers, and not from the perspective of formal
 analysis specialists. Notably, not a single talk at RustConf mentioned the word
 "formal".
 
-On the research side, there is RustVerify, a workshop with no proceedings
+On the research side, there is RustVerify, a workshop with no proceedings,
 traditionally associated with ETAPS. However, RustVerify follows a traditional
 conference format, meaning that the presentations are very static, and leave
 few opportunities for interactions in small groups with measurable outcomes.
