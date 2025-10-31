@@ -1,7 +1,3 @@
-Website says: "Our applications are typically 5 pages long."
-
-The proposal text must be written in English and should clearly describe the following aspects of the proposed seminar:
-
 # Summary of the field(s) of research within which the topic of the proposed seminar lies
 
 Over the past decade, the Rust programming language has rapidly gained traction as a safer alternative
@@ -32,9 +28,9 @@ static analysis and verification tools, aiming to further raise the confidence a
 of newly developed, security-critical Rust code. Many teams either repurposed and extended existing, well-established
 tools for other languages (e.g., C) to target Rust, or developed new approaches specifically targeting Rust
 specificities, in both cases leveraging invariants provided by the type system to simplify analysis and verification.
-//AF: Do we need explicit citations/names here?
-//PM: I think it would be useful to bak our claims with references. But since this is in markdown, I neither know how long the 
-//proposal currently us nor how to add references. 
+<!-- //AF: Do we need explicit citations/names here? -->
+<!-- //PM: I think it would be useful to bak our claims with references. But since this is in markdown, I neither know how long the --> 
+<!-- //proposal currently us nor how to add references. --> 
 
 <!-- While several of these approaches are now able to handle complex applications, e.g., cryptographic implementations, -->
 <!-- operating systems, security monitors, or the Rust standard library itself, the multiplicity of tools leads to -->
@@ -163,42 +159,46 @@ We expect several outcomes, in no particular order:
 
 # Ideas about the structure of the seminar
 
-Aim for a short seminar (3 days):
+**Day 1, morning**: Quick presentations from all participants (10 minutes each) about their tools, scope, expressiveness, and common difficulties interacting with Rust
 
-    Day 1, morning: Quick presentations from all participants (10 minutes each) about their tools, scope, expressiveness, and common difficulties interacting with Rust
+All working groups come with a summary to the broader audience at the end of each session.
 
-    All working groups come with a summary to the broader audience at the end of each session
-    Day 1, afternoon: Working Groups
-        * Analysis and verification challenges (language features, idioms, program properies)
-        * Rust semantics with a focus on unclear concepts
-        * A common specification language for Rust
+**Day 1, afternoon**: Working Groups
 
-    Day 2, morning: Working groups
-        * Benchmark suite
-        * Focus groups for new analysis areas
-        * Discussion of well-established C verification tools, and connections/applicability to Rust
-        * Interacting with the Rust compiler, and common engineering challenges
+- Analysis and verification challenges (language features, idioms, program properies)
+- Rust semantics with a focus on unclear concepts
+- A common specification language for Rust
 
-    Day 2, afternooon:
-        * "VerifyThis"-like challenge for deductive verification tools
-        * "AnalyzeThat"-like challenge for static analysis tools, using benchmarks established in the morning
+**Day 2, morning**: Working groups
 
-    Day 3, morning:
-        * Debrief of differences, strengths and weaknesses of existing tools, based on day 2 challenge
+- Benchmark suite
+- Focus groups for new analysis areas
+- Discussion of well-established C verification tools, and connections/applicability to Rust
+- Interacting with the Rust compiler, and common engineering challenges
 
-    Day 3, afternoon (parallel sessions / focus groups):
-        * Hacking on common engineering infrastructure
-        * Prototypes of novel analyses
-        * Larger benchmarking suite and proof ladder of increasiningly challenging examples for different tools
+**Day 2, afternooon (relying on topics prepared ahead of time by participants)**:
 
-BP: For Day 2 afternoon, is it realistic that we can come up with good analysis/verification targets
-    in the morning?  Or are we going to have to prepare something in advance?  Both seem potentially
-    fraught.
-JP: I think it'd be ok to ask participants to prepare a few potential
-    challenges/targets ahead of time, then sift through them during the seminar?
-AF: For verification targets, I believe it would need to be prepared in advance. For analysis tools, I am
-reasonably hopeful we could identify several CVEs in the morning, and spend time in the afternoon modifying/minimizing
-them to fit some existing tools.
+- "VerifyThis"-like challenge for deductive verification tools
+- "AnalyzeThat"-like challenge for static analysis tools, using benchmarks established in the morning
+
+**Day 3, morning**:
+
+- Debrief of differences, strengths and weaknesses of existing tools, based on day 2 challenge
+
+**Day 3, afternoon (parallel sessions / focus groups)**:
+
+* Hacking on common engineering infrastructure
+* Prototypes of novel analyses
+* Larger benchmarking suite and proof ladder of increasiningly challenging examples for different tools
+
+<!-- BP: For Day 2 afternoon, is it realistic that we can come up with good analysis/verification targets -->
+<!--     in the morning?  Or are we going to have to prepare something in advance?  Both seem potentially -->
+<!--     fraught. -->
+<!-- JP: I think it'd be ok to ask participants to prepare a few potential -->
+<!--     challenges/targets ahead of time, then sift through them during the seminar? -->
+<!-- AF: For verification targets, I believe it would need to be prepared in advance. For analysis tools, I am -->
+<!-- reasonably hopeful we could identify several CVEs in the morning, and spend time in the afternoon modifying/minimizing -->
+<!-- them to fit some existing tools. -->
 
 # Difference to other Dagstuhl Seminars within related topics, in particular those within the same topic
 
@@ -206,6 +206,7 @@ This seminar proposes to focus exclusively on Rust; looking through the Dagstuhl
 seminar archives, it appears that no other seminar has focused on Rust before.
 
 The following seminars are loosely related:
+
 - 25412 Sound Static Program Analysis in Modern Software Engineering. This
   seminar focused on static analyses at large, and how they interact with
   software engineering processes. A particular emphasis was put on Web
