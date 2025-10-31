@@ -14,23 +14,27 @@ and reliability of critical software infrastructure; as an example, high-profile
 the Windows and Linux kernels are currently developing new features using Rust.
 
 Despite its promises, however, using Rust is not a silver bullet. First, to ensure memory safety,
-Rust relies on runtime checks to determine whether accesses into structured memory (i.e., into
-arrays) are in bounds; if not, programs cleanly abort (panic in Rust parlance). While better than
+Rust relies on runtime checks to determine whether accesses into arrays are in bounds; 
+if not, programs cleanly abort (panic in Rust parlance). While better than
 memory vulnerabilities in C or C++, this behavior obliges programmers to manually establish the
-_panic-freedom_ of their code.  Second, while highly effective, the Rust _borrow-checker_ can be too
+_panic-freedom_ of their code.  Second, while highly effective, the Rust _borrow-checker_ (a key component
+of Rust's ownership type system) can be too
 restrictive in its quest to ensure that Rust code abides by the ownership-based discipline
 underlying memory safety.  To work around these restrictions, Rust provides an _unsafe_ escape
 hatch, allowing for more complex aliasing and memory patterns, at the cost of compile-time safety
-guarantees, such that programmers are trusted to ensure the safety of their code.
+guarantees, such that programmers are trusted to ensure the safety of their code. Errors in unsafe
+code may compromise the guarantees Rust is aiming to provide.
 Last, beyond safety, Rust does not guarantee _correctness_, _reliability_, or
 _security_, leaving Rust code potentially susceptible to a range of errors and vulnerabilities.
 
 To address these issues, the formal verification community recently started investigating the development of
-static analysis and deductive verification tools, aiming to further raise the confidence and reliability
+static analysis and verification tools, aiming to further raise the confidence and reliability
 of newly developed, security-critical Rust code. Many teams either repurposed and extended existing, well-established
 tools for other languages (e.g., C) to target Rust, or developed new approaches specifically targeting Rust
 specificities, in both cases leveraging invariants provided by the type system to simplify analysis and verification.
 //AF: Do we need explicit citations/names here?
+//PM: I think it would be useful to bak our claims with references. But since this is in markdown, I neither know how long the 
+//proposal currently us nor how to add references. 
 
 <!-- While several of these approaches are now able to handle complex applications, e.g., cryptographic implementations, -->
 <!-- operating systems, security monitors, or the Rust standard library itself, the multiplicity of tools leads to -->
@@ -45,7 +49,7 @@ specificities, in both cases leveraging invariants provided by the type system t
 <!-- //to scale verification to realistic Rust systems, in particular, to fully handle unsafe Rust, interior mutability, asynchronous code, etc. -->
 <!-- //Since *all* tools are facing these challenges, we propose to bring the tool developers together to find common solutions. -->
 
-Initial results are promising: cryptographic libraries, microkernels, security monitors and storage
+Initial results are promising: cryptographic libraries, microkernels, security monitors, and storage
 systems have been verified using Rust-based tools. In particular, code written in safe Rust *does*
 relieve the verification engineer of memory-based proof obligations, and productivity gains have
 indeed been observed. However, these initial results either target specific application domains
@@ -53,10 +57,10 @@ indeed been observed. However, these initial results either target specific appl
 necessarily represent the reality of industrial Rust code.
 
 In effect, if we want to scale up these verification results to larger, real-world Rust systems,
-notably those using a mixture of `unsafe`, interior mutability (a.k.a. dynamic borrow-checking),
-concurrency and `async`, several scientific challenges loom large, for which the current crop of
-tools proposes no definitive answer. Since all tools face these common challenges, we propose to
-bring developers of these tools together to address these common challenges, both from a scientific
+notably those using a mixture of unsafe code, interior mutability (a.k.a. dynamic borrow-checking),
+concurrency and asynchronous tasks, several scientific challenges loom large, for which the existing
+techniques and tools propose no definitive answer. To address these common challenges, we propose to
+bring developers of these techniques and tools together to address these common challenges, both from a scientific
 and engineering standpoint.
 
 
@@ -80,11 +84,11 @@ implementation, but which, lacking a formal model, cannot be conclusively determ
 correct behavior).
 
 It therefore remains difficult to confidently develop analysis and verification techniques, when
-the semantics of Rust are still undergoing such debate.  Hence, we will not aim to
+the semantics of Rust are still undergoing such debate.  We will not aim to
 produce a comprehensive specification or dwell on the theoretical aspects of the language's design.
 Instead, we will focus on (a) identifying the parts of the language where clear
-specifications would most benefit analysis and verification tools, and (b) establishing a consensus on
-what we as a community believe the current semantics for those parts are and/or what they should be.
+specifications would most benefit analysis and verification, and (b) establishing a consensus on
+what we as a community believe the current semantics for those parts are or what they should be.
 
 Next, many analysis and verification techniques leverage Rust's unique ownership discipline to simplify reasoning, or to
 make reasoning tools more efficient. As a second axis, an important focus of our seminar is the extension of these techniques to the
@@ -99,8 +103,7 @@ As a third axis, we propose to focus specifically on tooling. There is a conside
 design and implementation work that needs to be addressed in this area, notably:
 - What are the theoretical and practical challenges of integrating the infrastructure necessary for analysis and verification into the Rust compiler? Could
   the community standardize on one framework (such as the Charon project or Place Capability Graphs), and if not, what are the roadblocks?
-- How can we design a unified Rust program specification language that enables interoperability between different tools and allows the community to develop common verified libraries?  How could such a language simultaneously
-serve a full spectrum of testing, analysis, and verification tools?
+- How can we design a unified Rust program specification language that enables interoperability between different tools and allows the community to develop common verified libraries?  How could such a language simultaneously serve a full spectrum of testing, analysis, and verification tools?
 
 Finally, as a transversal axis, we propose to put all of the ideas above into practice by identifying
 language features, implementation idioms, and program properties that are not sufficiently supported
@@ -151,20 +154,12 @@ We expect several outcomes, in no particular order:
 - a call to arms for formalization experts, pointing them at critical, understudied places in the Rust language;
 - a survey of the state of Rust verification and analysis tools, which will help establish a shared understanding of the advantages and disadvantages of existing techniques;
 - new directions for combining the best ideas from existing analysis techniques;
-- a taxonomy of Rust language features, coding idioms, and program properties to guide the further development of analysis and verification techniques
-- a benchmarking suite based on this taxonomy, including a series of verification challenges of increasing difficulty for analysis and verification tools, fostering comparison and development of tooling
-- new ideas for increasing adoption of Rust-related tools and techniques by the Rust community.
+- a taxonomy of Rust language features, coding idioms, and program properties to guide the further development of analysis and verification techniques;
+- a benchmarking suite based on this taxonomy, including a series of verification challenges of increasing difficulty for analysis and verification tools, fostering comparison and development of tooling;
+- new ideas for increasing adoption of Rust-related tools and techniques by the Rust community;
 - a systematic approach for interfacing with the Rust compiler in order to facilitate the development of reasoning tools, along with concrete tasks to implement it;
 - a shared common infrastructure to develop new tools for Rust;
 
-PM: The list is very long and does not seem realistic for a 3-day seminar (especially if we devote a half day to a competition and another half day to a hackathon (which I am still skeptical about). At the very least, we should be consistent: Every expected result should be reflected in the schedule, such that it is clear how we plan to achieve the result. Personally, I believe that we would achieve more if we focused a bit more. Some items on the list seem big enough for a seminar on their own.
-
-BP: I rearranged the list to put the more science-oriented items towards the top, following PM's
-theory of their importance to the panel.  Also tried to merge or at least group related items.
-
-JP: this looks good to me
-
-AF: Agreed
 
 # Ideas about the structure of the seminar
 
@@ -214,8 +209,8 @@ The following seminars are loosely related:
 - 25412 Sound Static Program Analysis in Modern Software Engineering. This
   seminar focused on static analyses at large, and how they interact with
   software engineering processes. A particular emphasis was put on Web
-  Applications. We instead focus on Rust specifically, and on
-  the underlying scientific problems.
+  Applications. We instead focus on Rust specifically and put more emphasis on verification
+  (deductive and model checking), besides program analysis.
 - 26111 Formal Analysis and Verification in Quantum Programming Languages.
   Verification is also something we aim for, but not in the context of quantum
   languages.
@@ -225,18 +220,17 @@ The following seminars are loosely related:
 
 # Conferences and research projects within related topics, and why it is justified to hold such a seminar at Dagstuhl
 
-There are many developer-facing Rust conferences, such as RustConf, RustNation,
-RustParis... however, these conferences focus on language discussions from the
+There are many developer-facing Rust conferences, such as RustConf, RustNation, and
+RustParis. However, these conferences focus on language discussions from the
 perspective of language designers, and not from the perspective of formal
 analysis specialists. Notably, not a single talk at RustConf mentioned the word
 "formal".
 
-On the PL research side, there is RustVerify, a workshop with no proceedings
+On the research side, there is RustVerify, a workshop with no proceedings
 traditionally associated with ETAPS. However, RustVerify follows a traditional
 conference format, meaning that the presentations are very static, and leave
 few opportunities for interactions in small groups with measurable outcomes.
 
 We envision that Dagstuhl will provide the necessary environment to get
-engagement from both sides of this community (PL researchers and industrial practitioners) and
-create new collaborations beyond Ralf Jung's (excellent) ongoing interaction
-with the Rust compiler team.
+engagement from both sides of this community (researchers and industrial practitioners) and
+create new collaborations.
